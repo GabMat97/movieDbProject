@@ -15,7 +15,7 @@ class MoviesDbApplicationTests {
 	public void testMovieNameMethod(){
 
 		Movie testFilm = new Movie ("The Hunger Games", "Not too shabby");
-		assertEquals("The Hunger Games", "The Hunger Games", testFilm.getName());
+		assertEquals("It is not The Hunger Games", "The Hunger Games", testFilm.getName());
 	}
 }
 
