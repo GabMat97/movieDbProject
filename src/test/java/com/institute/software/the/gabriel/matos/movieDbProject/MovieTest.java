@@ -14,8 +14,8 @@ class MoviesDbApplicationTests {
 	@Test
 	public void testMovieNameMethod(){
 
-		Movie testFilm = new Movie ("Harry Potter", "Not too shabby");
-		assertEquals("The Book is not Harry Potter", "Harry Potter", testFilm.getName());
+		Movie testFilm = new Movie ("The Hunger Games", "Not too shabby");
+		assertEquals("The Hunger Games", "The Hunger Games", testFilm.getName());
 	}
 }
 
