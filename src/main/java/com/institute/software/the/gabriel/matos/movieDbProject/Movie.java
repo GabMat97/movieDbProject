@@ -1,35 +1,39 @@
 package com.institute.software.the.gabriel.matos.movieDbProject;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "film")
 public class Movie {
-    private String name;
-    private String review;
-    private int rating;
 
-    public Movie(String name, String review, int rating) {
-        this.name = name;
-        this.review = review;
+    @Id
+    private int id;
+
+    @Column(name = "title")
+    private String title;
+    @Column(name = "rating")
+    private String rating;
+
+    public Movie(String title, String rating) {
+        this.title = title;
         this.rating = rating;
     }
     public Movie(){
 
     }
-    public String getName() {
-        return name;
+
+    public String getTitle() {
+        return title;
     }
-    public String getReview() {
-        return review;
+
+    public void setTitle(String title) {
+        this.title = title;
     }
-    public String setName(String name){
-        this.name = name;
-        return name;
-    }
-    public String setReview(String review) {
-        this.review = review;
-    }
-    public int getRating() {
+
+    public String getRating() {
         return rating;
     }
-    public int setRating(int rating) {
+
+    public void setRating(String rating) {
         this.rating = rating;
     }
 }
