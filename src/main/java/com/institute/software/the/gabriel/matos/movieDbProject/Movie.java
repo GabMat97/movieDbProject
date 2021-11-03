@@ -6,11 +6,13 @@ import javax.persistence.*;
 public class Movie {
 
     @Id
+    @Column(name = "film_id")
     private int id;
 
-    @Column(name = "title")
+
+
     private String title;
-    @Column(name = "rating")
+
     private String rating;
 
     public Movie(String title, String rating) {
@@ -22,10 +24,12 @@ public class Movie {
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public void setTitle(String title) {
+
         this.title = title;
     }
 
@@ -34,6 +38,7 @@ public class Movie {
     }
 
     public void setRating(String rating) {
+
         this.rating = rating;
     }
 }

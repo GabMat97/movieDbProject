@@ -11,43 +11,37 @@ class MoviesDbApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+	@Test
+	public void testMoviegetTitle(){
+
+		Movie testFilm = new Movie ("The Hunger Games", "4");
+		assertEquals("The Hunger Games", testFilm.getTitle());
+	}
+	@Test
+	public void testMoviegetRating(){
+
+		Movie testFilm = new Movie ("The Hunger Games", "4");
+		assertEquals("4",testFilm.getRating());
+	}
+
+
 //	@Test
-//	public void testMoviegetName(){
+//	public void testMoviesetTitle(){
 //
-//		Movie testFilm = new Movie ("The Hunger Games", "Too fake", 4);
-//		assertEquals("The Hunger Games", testFilm.getName());
-//	}
-//	@Test
-//	public void testMoviegetReview(){
-//
-//		Movie testFilm = new Movie ("The Hunger Games", "Too fake", 4);
-//		assertEquals("The review is not too fake", "Too fake", testFilm.getReview());
-//	}
-//	@Test
-//	public void testMoviegetRating(){
-//
-//		Movie testFilm = new Movie ("The Hunger Games", "Too fake", 4);
-//		assertEquals(4,testFilm.getRating());
-//	}
-//
-//	public void testMoviesetName(){
-//
-//		Movie testFilm = new Movie ("The Hunger Games", "Too fake", 4);
-//		assertEquals("Not Not The Hunger Games", "Not The Hunger Games", testFilm.setName("Not The Hunger Games"));
-//	}
-//
-//	@Test
-//	public void testMoviesetReview(){
-//
-//		Movie testFilm = new Movie ("The Hunger Games", "Too fake", 4);
-//		assertEquals("Is kinda awesome",testFilm.setReview("Is kinda awesome"));
+//		Movie testFilm = new Movie();
+//		testFilm.setTitle("Harry Potter");
+//		assertEquals("The title was incorrect", "Harry Potter", testFilm.getTitle());
 //	}
 //	@Test
 //	public void testMoviesetRating(){
 //
-//		Movie testFilm = new Movie ("The Hunger Games", "Too fake", 4);
-//		assertEquals(5,testFilm.setRating(5));
+//		Movie testFilm = new Movie();
+//		testfilm.setRating("R");
+//		assertEquals("The rating was incorrect", "R", testfilm.getRating());
 //	}
+
+//
+
 
 }
 
