@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Movie {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "film_id")
     private int film_id;
     private String title;
