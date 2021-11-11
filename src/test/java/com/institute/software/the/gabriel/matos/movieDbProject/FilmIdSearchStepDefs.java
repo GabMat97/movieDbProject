@@ -28,13 +28,13 @@ public class FilmIdSearchStepDefs {
 
     @When("i search for for film with title {string}")
     public void SearchForFilmId(String title) {
-        title = "ALADDIN CALENDAR";
+        title = "AMERICAN CIRCUS";
         response = movieRepository.searchByTitleLike(title);
     }
 
     @Then("i should see film info")
     public Movie SeeMovieInfo() {
-        actualTitle = "ALADDIN CALENDAR";
+        actualTitle = "AMERICAN CIRCUS";
         assertEquals(response.get(0).getTitle(), actualTitle);
         return response.get(0);
     }
