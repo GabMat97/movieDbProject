@@ -50,7 +50,7 @@ public class MoviesDBApplication {
 					@RequestParam int film_id,
 					@RequestParam String description
 	) {
-		var updateFilm= movieRepository.findById(film_id).get();
+		Movie updateFilm= movieRepository.findById(film_id).get();
 		updateFilm.setDescription(description);
 		movieRepository.save(updateFilm);
 		return "Your film description has been updated";
@@ -61,7 +61,7 @@ public class MoviesDBApplication {
 			String delete(
 					@RequestParam int film_id
 	) {
-			var deleteFilm = movieRepository.findById(film_id).get();
+			Movie deleteFilm = movieRepository.findById(film_id).get();
 			movieRepository.delete(deleteFilm);
 			return "Your movie has been deleted";
 	}
