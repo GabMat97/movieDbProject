@@ -27,7 +27,7 @@ public class CreateFilmStepDefs {
         movieRepository.save(testMovie);
     }
 
-    @Then("the new film in the database should have film id {int}, title {string}, year {int}, language id {int}, description {string}, length {int} and rating {string}")
+    @Then("the new film in the database should have film id {int}, title {string}, description {string}, year {int}, language id {int}, length {int} and rating {string}")
     public void theNewFilmInTheDatabaseShouldHaveFilmIdTitleYearDescriptionLengthAndRating(int film_id, String title, String description, int release_year, int language_id, int length, String rating) {
         int idForNewFilm = movieRepository.searchByTitleLike(title).get(0).getFilm_id();
         assertEquals(movieRepository.findById(idForNewFilm).get().getFilm_id(), film_id);
