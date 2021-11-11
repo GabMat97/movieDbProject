@@ -16,6 +16,7 @@ public class Movie {
     private int duration;
     private String rating;
 
+
     public Movie(int film_id, String title, String description, int release_year, int language_id, int duration, String rating) {
         this.film_id= film_id;
         this.title = title;
