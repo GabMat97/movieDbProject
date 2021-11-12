@@ -56,15 +56,22 @@ public class MoviesDBApplication {
 		return "Your film description has been updated";
 	}
 
-	@DeleteMapping("/deletefilm")
-	public@ResponseBody
-			String delete(
-					@RequestParam int film_id
-	) {
-			Movie deleteFilm = movieRepository.findById(film_id).get();
-			movieRepository.delete(deleteFilm);
-			return "Your movie has been deleted";
+
+	@DeleteMapping("films/deletefilm/{id}")
+	public String deleteById(@PathVariable("id") int id) {
+		movieRepository.deleteById(id);
+		return "Film Removed";
 	}
+
+//	@DeleteMapping("/deletefilm")
+//	public @ResponseBody
+//			String delete(
+//					@RequestParam int film_id
+//	) {
+//			Movie deleteFilm = movieRepository.findById(film_id).get();
+//			movieRepository.deleteById(deleteFilm.getFilm_id());
+//			return "Your movie has been deleted";
+//	}
 
 }
 
