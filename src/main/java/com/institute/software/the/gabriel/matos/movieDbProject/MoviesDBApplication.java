@@ -64,15 +64,5 @@ public class MoviesDBApplication {
 		return "Film Removed";
 	}
 
-//	@DeleteMapping("/deletefilm")
-//	public @ResponseBody
-//			String delete(
-//					@RequestParam int film_id
-//	) {
-//			Movie deleteFilm = movieRepository.findById(film_id).get();
-//			movieRepository.deleteById(deleteFilm.getFilm_id());
-//			return "Your movie has been deleted";
-//	}
-
 }
 
