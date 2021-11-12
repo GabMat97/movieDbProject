@@ -50,7 +50,8 @@ public class MoviesDBApplication {
 					@RequestParam int film_id,
 					@RequestParam String description
 	) {
-		Movie updateFilm= movieRepository.findById(film_id).get();
+		Movie updateFilm= movieRepository.findById(film_id).orElse(null);
+		assert updateFilm != null;
 		updateFilm.setDescription(description);
 		movieRepository.save(updateFilm);
 		return "Your film description has been updated";
