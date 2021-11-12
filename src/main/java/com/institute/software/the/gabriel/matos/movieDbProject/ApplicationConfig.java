@@ -22,6 +22,7 @@ public class ApplicationConfig {
     @Bean
     public DataSource dataSource(){
         AWSSecrets secrets=getSecret();
+        assert secrets != null;
         return DataSourceBuilder
                 .create()
                 .driverClassName("com.mysql.cj.jdbc.Driver")
