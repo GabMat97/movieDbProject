@@ -45,7 +45,7 @@ class ListFilmComponent extends React.Component {
             <div>
                 <h2 className="text-center">Films List</h2>
                 <div className="row">
-                <button className="btn btn-primary" onClick={this.addFilm}> Add Employee </button>
+                <button className="btn btn-primary" onClick={this.addFilm}> Add Movie </button>
                 </div>
                 <div className="row">
                     <table className="table table-striped table-bordered">
