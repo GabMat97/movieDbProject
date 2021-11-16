@@ -1,7 +1,7 @@
-Feature: Creating a movie with all the parameters
-  As a user I want to create a movie using the film id, film title, year, description, length and rating.
+Feature: Adding new film
+  As an admin I want to add a new film to the database so that it can be accessed by users at a later point.
 
-  Scenario: user searches for film by title that exists in database
-    Given the film with the information is available
-    When i try to add the film  to the database with film id 1001, title "The Hunger Games", description "Bows and guns", year 2005, language id 1,  length 165 and rating "PG-13"
-    Then the new film in the database should have film id 1001, title "The Hunger Games", description "Bows and guns", year 2005, language id 1, length 165 and rating "PG-13"
+  Scenario: a new film is added to the database successfully using all information
+    Given the title, description, release year, language ID, duration and rating information is available
+    When i try to add the film with film id 1001, title "Lord of the Rings",  description "Potatoes", language id 1, release year 2009, duration 191 and rating "R" to the database
+    Then the new film in the database should have title "THE ROOM", year 2009, description "The greatest film ever", length 91 and rating "R"
