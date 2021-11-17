@@ -83,8 +83,8 @@ class MovieTest {
 	@Test
 	public void testSetDuration() {
 		Movie movieTest = new Movie();
-		movieTest.setDuration(0);
-		assertEquals(0, movieTest.getDuration(), "The Duration was incorrect");
+		movieTest.setDuration(121);
+		assertEquals(121, movieTest.getDuration(), "The Duration was incorrect");
 	}
 
 	@Test

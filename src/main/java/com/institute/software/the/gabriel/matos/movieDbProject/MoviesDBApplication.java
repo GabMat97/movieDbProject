@@ -51,9 +51,9 @@ public class MoviesDBApplication {
 		return "Your film description has been updated";
 	}
 
-	@DeleteMapping("films/deletefilm/{id}")
-	public String deleteById(@PathVariable("id") int id) {
-		movieRepository.deleteById(id);
+	@DeleteMapping("films/deletefilm")
+	public String deleteById(@RequestParam int film_id) {
+		movieRepository.deleteById(film_id);
 		return "Film Removed";
 	}
 

@@ -23,11 +23,11 @@ public class FilmIdSearchStepDefs {
 
     @Given("the film with title {string} is in the database")
     public void FilmIsInDatabase(String title) {
+
     }
 
     @When("i search for for film with title {string}")
     public void SearchForFilmId(String title) {
-        title = "AMERICAN CIRCUS";
         response = movieRepository.searchByTitleLike(title);
     }
 

@@ -12,11 +12,9 @@ public class UpdateDescriptionStepDefs {
     @Autowired
     private MovieRepository movieRepository;
 
-    private Movie testMovie;
-
     @Given("the film with id {int} exists in the database")
     public void theFilmWithIdExistsInTheDatabase(int id) {
-
+        movieRepository.findById(id);
     }
 
     @When("I update description of film with id {int} to {string}")

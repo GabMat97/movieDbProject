@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const FILM_API_BASE_URL = "http://3.15.18.162:8080/movies/all";
+const FILM_API_BASE_URL = "http://3.15.18.162:8080/moviesDB/movies";
 
 class FilmService {
 

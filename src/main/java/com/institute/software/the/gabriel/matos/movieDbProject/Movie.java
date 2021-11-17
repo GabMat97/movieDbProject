@@ -80,7 +80,7 @@ public class Movie implements Serializable {
         return duration;
     }
 
-    public void  setDuration(int length) {
+    public void  setDuration(int duration) {
         this.duration = duration;
     }
 
