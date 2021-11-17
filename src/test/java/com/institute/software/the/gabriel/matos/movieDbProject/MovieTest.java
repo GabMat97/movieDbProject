@@ -15,55 +15,42 @@ class MovieTest {
 	//Testing getters
 
 	@Test
-	public void testFilmId() {
-		Movie movieTest = new Movie(999, "The Hunger Games", "Bows and guns", 2013, 1, 121, "PG-13");
-		assertEquals(999, movieTest.getFilm_id(), "Wrong film id");
-	}
-
-	@Test
 	public void testMovieTitle(){
-		Movie movieTest = new Movie (999, "The Hunger Games","Bows and guns",2013,1,121,"PG-13");
+		Movie movieTest = new Movie (1,"The Hunger Games","Bows and guns",2013,121,"PG-13");
 		assertEquals("The Hunger Games", movieTest.getTitle(), "Wrong movie title");
 	}
 
 	@Test
-	public void testYearOfRelease() {
-		Movie movieTest = new Movie(999, "The Hunger Games", "Bows and guns", 2013, 1, 121, "PG-13");
-		assertEquals(2013, movieTest.getRelease_year(), "Wrong release year");
+	public void testRelease_yr() {
+		Movie movieTest = new Movie(1,"The Hunger Games", "Bows and guns", 2013,  121, "PG-13");
+		assertEquals(2013, movieTest.getRelease_yr(), "Wrong release year");
 	}
 
 	@Test
 	public void durationOfMovie() {
-		Movie movieTest = new Movie(999, "The Hunger Games", "Bows and guns", 2013, 1, 121, "PG-13");
-		assertEquals(999, movieTest.getFilm_id(), "Wrong valid ID");
+		Movie movieTest = new Movie(1,"The Hunger Games", "Bows and guns", 2013,  121, "PG-13");
+		assertEquals(121, movieTest.getDuration(), "Wrong duration");
 	}
 
 	@Test
 	public void ratingOfMovie() {
-		Movie movieTest = new Movie(999, "The Hunger Games", "Bows and guns", 2013, 1, 121, "PG-13");
-		assertEquals("PG-13", movieTest.getRating(), "Wrong movie duration");
+		Movie movieTest = new Movie(1,"The Hunger Games", "Bows and guns", 2013,  121, "PG-13");
+		assertEquals("PG-13", movieTest.getRating(), "Wrong movie rating");
 	}
 
 	@Test
 	public void testLanguageId() {
-		Movie movieTest = new Movie(999, "The Hunger Games", "Bows and guns", 2013, 1, 121, "PG-13");
+		Movie movieTest = new Movie(1,"The Hunger Games", "Bows and guns", 2013,  121, "PG-13");
 		assertEquals(1, movieTest.getLanguage_id(), "Wrong language ID");
 	}
 
 	@Test
 	public void testDescription() {
-		Movie movieTest = new Movie(999, "The Hunger Games", "Bows and guns", 2013, 1, 121, "PG-13");
+		Movie movieTest = new Movie(1,"The Hunger Games", "Bows and guns", 2013,  121, "PG-13");
 		assertEquals("Bows and guns", movieTest.getDescription(), "Wrong description");
 	}
 
 	//Testing Setters
-
-	@Test
-	public void testSetFilmID() {
-		Movie movieTest = new Movie();
-		movieTest.setId(999);
-		assertEquals(999, movieTest.getFilm_id(), "The film id was incorrect");
-	}
 
 	@Test
 	public void testSetTitleMethod() {
@@ -80,10 +67,10 @@ class MovieTest {
 	}
 
 	@Test
-	public void testSetRelease_Year() {
+	public void testSetRelease_Yr() {
 		Movie movieTest = new Movie();
-		movieTest.setRelease_year(2013);
-		assertEquals(2013, movieTest.getRelease_year(), "The release year was incorrect");
+		movieTest.setRelease_yr(2013);
+		assertEquals(2013, movieTest.getRelease_yr(), "The release year was incorrect");
 	}
 
 	@Test
@@ -97,7 +84,7 @@ class MovieTest {
 	public void testSetDuration() {
 		Movie movieTest = new Movie();
 		movieTest.setDuration(121);
-		assertEquals(121, movieTest.getDuration(), "The duration was incorrect");
+		assertEquals(121, movieTest.getDuration(), "The Duration was incorrect");
 	}
 
 	@Test

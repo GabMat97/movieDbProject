@@ -21,19 +21,15 @@ public class UpdateDescriptionStepDefs {
 
     @When("I update description of film with id {int} to {string}")
     public void iUpdateTheDescription(int id, String description) {
-        Movie testMovie = movieRepository.findById(id).get();
+        var testMovie = movieRepository.findById(id).get();
         testMovie.setDescription(description);
         movieRepository.save(testMovie);
     }
 
-//    @Then("I should see the updated description of the film")
-//    public void iShouldSeeTheNewFilmDescription(int id, String description) {
-//        assertEquals(movieRepository.findById(id).get().getDescription(),description);
-//    }
-
-    @Then("I should see the updated description of movie with id {int} of {string}")
+    @Then("the film with ID {int} should have description {string} in the database")
     public void iShouldSeeTheUpdatedDescriptionOfMovieWithIdOf(int id, String description) {
         assertEquals(movieRepository.findById(id).get().getDescription(), description);
     }
+
 }
 
