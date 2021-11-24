@@ -46,3 +46,8 @@
     text-align: center;
     color: white;
 }
+
+.header {
+    text-align: left;
+    background-color: purple;
+}

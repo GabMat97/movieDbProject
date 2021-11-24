@@ -23,6 +23,7 @@ public class DeleteFilmStepDefs {
 
     @When("i try to delete the existing film")
     public void iTryToDeleteTheExistingFilm() {
+
         movieRepository.deleteById(response.getFilm_id());
     }
 

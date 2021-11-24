@@ -18,6 +18,7 @@ public class MoviesDBApplication {
 	@Autowired
 	private MovieRepository movieRepository;
 
+	@CrossOrigin("*")
 	@GetMapping("/movies")
 	public @ResponseBody Iterable<Movie> getAllMovies() {
 		return movieRepository.findAll();

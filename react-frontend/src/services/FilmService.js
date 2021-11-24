@@ -1,18 +1,18 @@
 import axios from 'axios';
 
-const FILM_API_BASE_URL = "http://3.15.18.162:8080/moviesDB/movies";
+const FILM_API_BASE_URL = "http://3.15.18.162:8080/moviesDB";
 
 class FilmService {
 
     getFilms() {
-        return axios.get(FILM_API_BASE_URL)
+        return axios.get(FILM_API_BASE_URL + '/movies')
+        console.log(response);
         .then(function (response) {
-         console.log(response.data);
          return response.data;
                 })
     }
-    createFilm(film) {
-        return axios.post((FILM_API_BASE_URL), film);
+    createFilm() {
+        return axios.post((FILM_API_BASE_URL + '/addfilm');
     }
     getFilmById(filmId) {
         return axios.get(FILM_API_BASE_URL + '/' + filmId);

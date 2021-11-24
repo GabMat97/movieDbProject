@@ -12,7 +12,7 @@ class HeaderComponent extends Component {
     render() {
         return(
             <div>
-                <header>
+                <header className="header">
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                         <div><a href="https://javaguides.net" className="navbar-brand">Movies</a></div>
                     </nav>
