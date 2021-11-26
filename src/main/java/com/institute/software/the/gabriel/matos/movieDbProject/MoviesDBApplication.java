@@ -2,6 +2,8 @@ package com.institute.software.the.gabriel.matos.movieDbProject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 @RestController
@@ -24,21 +26,30 @@ public class MoviesDBApplication {
 		return movieRepository.findAll();
 	}
 
+//	@CrossOrigin("*")
+//	@PostMapping("/addfilm")
+//	public @ResponseBody
+//	String create(
+//			@RequestParam int movie_id,
+//			@RequestParam String title,
+//			@RequestParam String description,
+//			@RequestParam int release_yr,
+//			@RequestParam int length,
+//			@RequestParam String rating
+//	){
+//		Movie newfilm = new Movie(movie_id, title, description, release_yr, length, rating);
+//		movieRepository.save(newfilm);
+//		return "Your film has been added";
+//	}
+	@CrossOrigin("*")
 	@PostMapping("/addfilm")
-	public @ResponseBody
-	String create(
-			@RequestParam int movie_id,
-			@RequestParam String title,
-			@RequestParam String description,
-			@RequestParam int release_yr,
-			@RequestParam int length,
-			@RequestParam String rating
-	){
-		Movie newfilm = new Movie(movie_id, title, description, release_yr, length, rating);
-		movieRepository.save(newfilm);
-		return "Your film has been added";
+	public ResponseEntity<Movie> addAFilm(@RequestBody Movie newFilm){
+		Movie savedMovie = new Movie(newFilm.getFilm_id(), newFilm.getTitle(), newFilm.getDescription(), newFilm.getRelease_yr(), newFilm.getDuration(), newFilm.getRating());
+		movieRepository.save(savedMovie);
+		return new ResponseEntity<Movie>(savedMovie, HttpStatus.OK);
 	}
 
+	@CrossOrigin("*")
 	@PutMapping("/updatefilm")
 	public @ResponseBody
 	String update(
@@ -52,6 +63,7 @@ public class MoviesDBApplication {
 		return "Your film description has been updated";
 	}
 
+	@CrossOrigin("*")
 	@DeleteMapping("films/deletefilm")
 	public String deleteById(@RequestParam int film_id) {
 		movieRepository.deleteById(film_id);
