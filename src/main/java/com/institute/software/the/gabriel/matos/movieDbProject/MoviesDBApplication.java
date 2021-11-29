@@ -64,8 +64,8 @@ public class MoviesDBApplication {
 	}
 
 	@CrossOrigin("*")
-	@DeleteMapping("films/deletefilm")
-	public String deleteById(@RequestParam int film_id) {
+	@DeleteMapping("/deletefilm/{film_id}")
+	public String deleteById(@PathVariable("film_id") int film_id) {
 		movieRepository.deleteById(film_id);
 		return "Film Removed";
 	}
