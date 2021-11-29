@@ -26,21 +26,6 @@ public class MoviesDBApplication {
 		return movieRepository.findAll();
 	}
 
-//	@CrossOrigin("*")
-//	@PostMapping("/addfilm")
-//	public @ResponseBody
-//	String create(
-//			@RequestParam int movie_id,
-//			@RequestParam String title,
-//			@RequestParam String description,
-//			@RequestParam int release_yr,
-//			@RequestParam int length,
-//			@RequestParam String rating
-//	){
-//		Movie newfilm = new Movie(movie_id, title, description, release_yr, length, rating);
-//		movieRepository.save(newfilm);
-//		return "Your film has been added";
-//	}
 	@CrossOrigin("*")
 	@PostMapping("/addfilm")
 	public ResponseEntity<Movie> addAFilm(@RequestBody Movie newFilm){
@@ -50,13 +35,13 @@ public class MoviesDBApplication {
 	}
 
 	@CrossOrigin("*")
-	@PutMapping("/updatefilm")
+	@PutMapping("/updatefilm/{film_id}")
 	public @ResponseBody
 	String update(
-			@RequestParam int movie_id,
+			@PathVariable int film_id,
 			@RequestParam String description
 	) {
-		Movie updatedFilm= movieRepository.findById(movie_id).orElse(null);
+		Movie updatedFilm= movieRepository.findById(film_id).orElse(null);
 		assert updatedFilm != null;
 		updatedFilm.setDescription(description);
 		movieRepository.save(updatedFilm);
