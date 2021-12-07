@@ -22,8 +22,8 @@ public class CreateFilmStepDefs {
     }
 
     @When("i try to add the film with movie ID {int}, title {string}, description {string}, release year {int}, duration {int} and rating {string} to the database")
-    public void iTryToAddTheFilmWithMovieIdTitleDescriptionReleaseYearDurationAndRatingToTheDatabase(int movie_id, String title, String description, int release_yr, int duration, String rating) {
-        testMovie = new Movie(movie_id, title, description, release_yr, duration, rating);
+    public void iTryToAddTheFilmWithMovieIdTitleDescriptionReleaseYearDurationAndRatingToTheDatabase(int film_id, String title, String description, int release_yr, int duration, String rating) {
+        testMovie = new Movie(film_id, title, description, release_yr, duration, rating);
         movieRepository.save(testMovie);
     }
 

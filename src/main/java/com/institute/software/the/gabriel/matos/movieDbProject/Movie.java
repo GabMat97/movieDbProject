@@ -10,20 +10,20 @@ public class Movie implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "film_id")
     private int film_id;
-    private int movie_id;
     private String title;
     private String description;
-    @Column(name="release_yr")
+    @Column(name="release_year")
     private int release_yr;
     @Column(name="language_id")
     private int language_id;
+    @Column(name = "length")
     private int duration;
     private String rating;
 
 
-    public Movie(int movie_id, String title, String description, int release_yr, int duration, String rating) {
+    public Movie(int film_id, String title, String description, int release_yr, int duration, String rating) {
 
-        this.movie_id = movie_id;
+        this.film_id = film_id;
         this.title = title;
         this.description = description;
         this.release_yr = release_yr;
@@ -36,19 +36,19 @@ public class Movie implements Serializable {
 
     }
 
+    public int getFilm_id() {
+        return film_id;
+    }
 
-
-    public int getFilm_id() { return film_id; }
-
-    public void setId(int id) {
-        this.film_id = id;
+    public void setFilm_id(int film_id) {
+        this.film_id = film_id;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public void  setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -56,7 +56,7 @@ public class Movie implements Serializable {
         return description;
     }
 
-    public void  setDescription(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -64,7 +64,7 @@ public class Movie implements Serializable {
         return release_yr;
     }
 
-    public void  setRelease_yr(int release_yr) {
+    public void setRelease_yr(int release_yr) {
         this.release_yr = release_yr;
     }
 
@@ -72,15 +72,15 @@ public class Movie implements Serializable {
         return language_id;
     }
 
-    public void  setLanguage_id(int language) {
-        this.language_id = language;
+    public void setLanguage_id(int language_id) {
+        this.language_id = language_id;
     }
 
     public int getDuration() {
         return duration;
     }
 
-    public void  setDuration(int duration) {
+    public void setDuration(int duration) {
         this.duration = duration;
     }
 
@@ -88,9 +88,7 @@ public class Movie implements Serializable {
         return rating;
     }
 
-    public void  setRating(String rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
-
-
 }
