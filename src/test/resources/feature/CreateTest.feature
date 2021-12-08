@@ -3,5 +3,5 @@ Feature: Adding new film
 
   Scenario: a new film is added to the database successfully using all information
     Given the title, description, release year, duration and rating information is available
-    When i try to add the film with movie ID 1001, title "Lord of the Rings", description "Po-tay-toes", release year 2009, duration 191 and rating "R" to the database
+    When i try to add the film with film ID 1098, title "Lord of the Rings", description "Po-tay-toes", release year 2009, duration 191 and rating "R" to the database
     Then the new film in the database should have title "Lord of the Rings", description "Po-tay-toes", release year 2009, duration 191 and rating "R"
