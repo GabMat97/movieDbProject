@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RestController
 @SpringBootApplication
 
+@CrossOrigin("*")
 @RequestMapping("/moviesDB")
 public class MoviesDBApplication {
 
@@ -20,13 +21,11 @@ public class MoviesDBApplication {
 	@Autowired
 	private MovieRepository movieRepository;
 
-	@CrossOrigin("*")
 	@GetMapping("/movies")
 	public @ResponseBody Iterable<Movie> getAllMovies() {
 		return movieRepository.findAll();
 	}
 
-	@CrossOrigin("*")
 	@PostMapping("/addfilm")
 	public ResponseEntity<Movie> addAFilm(@RequestBody Movie newFilm){
 		Movie savedMovie = new Movie(newFilm.getFilm_id(), newFilm.getTitle(), newFilm.getDescription(), newFilm.getRelease_yr(), newFilm.getDuration(), newFilm.getRating());
@@ -34,7 +33,6 @@ public class MoviesDBApplication {
 		return new ResponseEntity<Movie>(savedMovie, HttpStatus.OK);
 	}
 
-	@CrossOrigin("*")
 	@PutMapping("/updatefilm/{film_id}")
 	public @ResponseBody
 	String update(
@@ -48,7 +46,6 @@ public class MoviesDBApplication {
 		return "Your film description has been updated";
 	}
 
-	@CrossOrigin("*")
 	@DeleteMapping("/deletefilm/{film_id}")
 	public String deleteById(@PathVariable("film_id") int film_id) {
 		movieRepository.deleteById(film_id);
